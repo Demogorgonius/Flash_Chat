@@ -62,6 +62,26 @@ class WelcomeView: CustomView {
     
     func setupConstraints() {
         
+        loginButton.snp.makeConstraints { make in
+            make.bottom.equalToSuperview().offset(-30)
+            make.trailing.equalToSuperview()
+            make.leading.equalToSuperview()
+            make.height.equalTo(61)
+            make.top.equalTo(registerButton.snp.bottom).offset(8)
+        }
+        
+        registerButton.snp.makeConstraints { make in
+            make.height.equalTo(61)
+            make.leading.equalToSuperview()
+            make.trailing.equalToSuperview()
+        }
+        
+        titleLabel.snp.makeConstraints { make in
+            make.height.equalTo(60)
+            make.centerX.equalToSuperview()
+            make.centerY.equalToSuperview()
+        }
+        
     }
     
     @objc func registerButtonTapped(_ sender: UIButton) {
