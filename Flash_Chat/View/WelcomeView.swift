@@ -16,6 +16,7 @@ protocol WelcomeViewDelegate: AnyObject {
 
 class WelcomeView: CustomView {
     
+    weak var delegate: WelcomeViewDelegate?
     
     lazy var titleLabel: UILabel = {
         let label = UILabel(frame: CGRect(x: 0, y: 0, width: 310, height: 60))
@@ -85,11 +86,11 @@ class WelcomeView: CustomView {
     }
     
     @objc func registerButtonTapped(_ sender: UIButton) {
-        
+        delegate?.welcomeView(registerTapped: sender)
     }
     
     @objc func loginButtonTapped(_ sender: UIButton) {
-        
+        delegate?.welcomeView(loginTapped: sender)
     }
     
 }

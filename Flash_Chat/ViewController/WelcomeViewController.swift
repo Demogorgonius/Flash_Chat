@@ -16,7 +16,22 @@ class WelcomeViewController: CustomViewController<WelcomeView> {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        customView.delegate = self
     }
     
+    
+}
+
+extension WelcomeViewController: WelcomeViewDelegate {
+    
+    func welcomeView(loginTapped button: UIButton) {
+        
+    }
+    
+    func welcomeView(registerTapped button: UIButton) {
+        let registerViewController = RegisterViewController()
+        registerViewController.modalPresentationStyle = .fullScreen
+         present(registerViewController, animated: true)
+    }
     
 }
