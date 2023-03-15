@@ -26,6 +26,10 @@ extension WelcomeViewController: WelcomeViewDelegate {
     
     func welcomeView(loginTapped button: UIButton) {
         
+        let loginViewController = LoginViewController()
+        loginViewController.modalPresentationStyle = .fullScreen
+        present(loginViewController, animated: true)
+        
     }
     
     func welcomeView(registerTapped button: UIButton) {

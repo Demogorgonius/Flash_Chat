@@ -23,6 +23,8 @@
 		A50CB15C29BF12B0006FAC8A /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50CB15B29BF12B0006FAC8A /* WelcomeViewController.swift */; };
 		A517AF9329C078D200BCC46C /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A517AF9229C078D200BCC46C /* RegisterView.swift */; };
 		A517AF9529C078E500BCC46C /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A517AF9429C078E500BCC46C /* RegisterViewController.swift */; };
+		A517AF9729C1AB7F00BCC46C /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A517AF9629C1AB7F00BCC46C /* LoginView.swift */; };
+		A517AF9929C1AB8F00BCC46C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A517AF9829C1AB8F00BCC46C /* LoginViewController.swift */; };
 		D947FD8A611CD0DC8C491195 /* Pods_Flash_Chat_Flash_ChatUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02057F1164F77E0D5264F5A2 /* Pods_Flash_Chat_Flash_ChatUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -69,6 +71,8 @@
 		A50CB15B29BF12B0006FAC8A /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		A517AF9229C078D200BCC46C /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		A517AF9429C078E500BCC46C /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		A517AF9629C1AB7F00BCC46C /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		A517AF9829C1AB8F00BCC46C /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		C103B6D0071D8A97CCE00A18 /* Pods_Flash_ChatTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Flash_ChatTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB19FFE5CFE51D3B88DB7693 /* Pods-Flash_ChatTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Flash_ChatTests.debug.xcconfig"; path = "Target Support Files/Pods-Flash_ChatTests/Pods-Flash_ChatTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -174,6 +178,7 @@
 			isa = PBXGroup;
 			children = (
 				A50CB15B29BF12B0006FAC8A /* WelcomeViewController.swift */,
+				A517AF9829C1AB8F00BCC46C /* LoginViewController.swift */,
 				A517AF9429C078E500BCC46C /* RegisterViewController.swift */,
 			);
 			path = ViewController;
@@ -191,6 +196,7 @@
 			children = (
 				A50CB15929BF126F006FAC8A /* WelcomeView.swift */,
 				A517AF9229C078D200BCC46C /* RegisterView.swift */,
+				A517AF9629C1AB7F00BCC46C /* LoginView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -474,10 +480,12 @@
 				A50CB15829BF0A1F006FAC8A /* CustomView.swift in Sources */,
 				A50CB15A29BF126F006FAC8A /* WelcomeView.swift in Sources */,
 				A50CB12229BF07AC006FAC8A /* AppDelegate.swift in Sources */,
+				A517AF9729C1AB7F00BCC46C /* LoginView.swift in Sources */,
 				A517AF9529C078E500BCC46C /* RegisterViewController.swift in Sources */,
 				A517AF9329C078D200BCC46C /* RegisterView.swift in Sources */,
 				A50CB12429BF07AC006FAC8A /* SceneDelegate.swift in Sources */,
 				A50CB15629BF09CA006FAC8A /* CustomViewController.swift in Sources */,
+				A517AF9929C1AB8F00BCC46C /* LoginViewController.swift in Sources */,
 				A50CB15C29BF12B0006FAC8A /* WelcomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
