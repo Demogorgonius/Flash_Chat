@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 import SnapKit
 
-protocol LoginViewProtocol: AnyObject {
+protocol LoginViewDelegate: AnyObject {
     
     func loginView(loginButtonTapped button: UIButton)
     func loginView(backButtonTapped button: UIButton)
@@ -19,7 +19,7 @@ protocol LoginViewProtocol: AnyObject {
 class LoginView: CustomView {
     //MARK: - Variables
     
-    weak var delegate: RegisterViewDelegate?
+    weak var delegate: LoginViewDelegate?
     
     //MARK: - StackView/UIView
     

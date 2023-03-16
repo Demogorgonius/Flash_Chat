@@ -15,6 +15,7 @@ class RegisterViewController: CustomViewController<RegisterView> {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        customView.delegate = self
     }
     
     
@@ -22,7 +23,9 @@ class RegisterViewController: CustomViewController<RegisterView> {
 
 extension RegisterViewController: RegisterViewDelegate {
     func registerView(registerTapped sender: UIButton) {
-        
+        let chatVC = ChatViewController()
+        chatVC.modalPresentationStyle = .fullScreen
+        present(chatVC, animated: true)
     }
     
     func registerView(backButtonTapped sender: UIButton) {

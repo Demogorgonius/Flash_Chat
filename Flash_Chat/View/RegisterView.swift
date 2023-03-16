@@ -125,7 +125,7 @@ class RegisterView: CustomView {
 extension RegisterView {
     
     @objc func registerButtonTapped(_ sender: UIButton ) {
-        
+        delegate?.registerView(registerTapped: sender)
     }
     
     @objc func backButtonTapped(_ sender: UIButton) {
