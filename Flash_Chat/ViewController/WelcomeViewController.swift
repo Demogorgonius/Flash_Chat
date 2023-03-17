@@ -19,6 +19,18 @@ class WelcomeViewController: CustomViewController<WelcomeView> {
         customView.delegate = self
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        let string = "⚡️FlashChat"
+        var timer = 0
+        for char in string {
+            DispatchQueue.main.asyncAfter(deadline: .now() + .microseconds(timer), execute: {
+                self.customView.configureTitleLabel(text: char)
+                
+            })
+            timer += 100000
+        }
+    }
+    
     
 }
 

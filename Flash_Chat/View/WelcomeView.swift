@@ -20,7 +20,7 @@ class WelcomeView: CustomView {
     
     lazy var titleLabel: UILabel = {
         let label = UILabel(frame: CGRect(x: 0, y: 0, width: 310, height: 60))
-        label.text = "⚡️FlashChat"
+        label.text = ""
         label.font = UIFont.systemFont(ofSize: 50, weight: .black)
         label.numberOfLines = 1
         label.textColor = UIColor(named: "BrandBlue")
@@ -83,6 +83,14 @@ class WelcomeView: CustomView {
             make.centerY.equalToSuperview()
         }
         
+    }
+    
+}
+
+extension WelcomeView {
+    
+    func configureTitleLabel(text: Character) {
+        titleLabel.text?.append(text)
     }
     
     @objc func registerButtonTapped(_ sender: UIButton) {
