@@ -22,6 +22,7 @@ class ChatViewController: CustomViewController<ChatView> {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        customView.delegate = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -43,5 +44,19 @@ extension ChatViewController {
         present(alert, animated: true)
         
     }
+}
+
+extension ChatViewController: ChatViewDelegate {
+    func chatView(sendMessageButtonTapped button: UIButton) {
+        
+    }
+    
+    func chatView(backButtonTapped button: UIButton) {
+        let welcomeVC = WelcomeViewController()
+        welcomeVC.modalPresentationStyle = .fullScreen
+        present(welcomeVC, animated: true)
+    }
+    
+    
 }
 

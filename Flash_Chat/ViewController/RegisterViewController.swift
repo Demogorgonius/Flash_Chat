@@ -40,7 +40,7 @@ extension RegisterViewController: RegisterViewDelegate {
     }
     
     func registerView(backButtonTapped sender: UIButton) {
-        
+        dismiss(animated: true)
     }
     
 }

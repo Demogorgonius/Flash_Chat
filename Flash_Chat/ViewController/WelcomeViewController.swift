@@ -20,6 +20,7 @@ class WelcomeViewController: CustomViewController<WelcomeView> {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        customView.titleLabel.text = ""
         let string = "⚡️FlashChat"
         var timer = 0
         for char in string {

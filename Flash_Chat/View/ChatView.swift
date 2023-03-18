@@ -12,6 +12,7 @@ import SnapKit
 protocol ChatViewDelegate: AnyObject {
     
     func chatView(sendMessageButtonTapped button: UIButton)
+    func chatView(backButtonTapped button: UIButton)
     
 }
 
@@ -56,15 +57,17 @@ class ChatView: CustomView {
         return button
     }()
     
-    //MARK: - UITableView
-    
-//    lazy var tableView: UITableView = {
-//        let tableView = UITableView()
-//        return tableView
-//    }()
-    
-    
-    
+    lazy var backButton: UIButton = {
+        let button = UIButton()
+        let iconConfiguration = UIImage.SymbolConfiguration(pointSize: 15, weight: .medium, scale: .medium)
+        let image = UIImage(systemName: "arrow.left", withConfiguration: iconConfiguration)
+        button.setImage(image, for: .normal)
+        button.backgroundColor = UIColor.black.withAlphaComponent(0.3)
+        button.tintColor = .white
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.addTarget(self, action: #selector(backButtonTapped), for: .touchUpInside)
+        return button
+    }()
     
     override func setupViews() {
         super.setupViews()
@@ -75,6 +78,7 @@ class ChatView: CustomView {
         backgroundColor = UIColor(named: "BrandPurple")
         addSubview(tableView)
         addSubview(sendMessageView)
+        addSubview(backButton)
         sendMessageView.addSubview(messageTextField)
         sendMessageView.addSubview(sendMessageButton)
         
@@ -94,6 +98,13 @@ class ChatView: CustomView {
 extension ChatView {
 
     func setupConstraints() {
+        
+        backButton.snp.makeConstraints { make in
+            make.height.equalTo(25)
+            make.width.equalTo(25)
+            make.top.equalToSuperview().offset(40)
+            make.leading.equalToSuperview().offset(15)
+        }
         
         sendMessageView.snp.makeConstraints { make in
             make.trailing.equalToSuperview()
@@ -128,6 +139,12 @@ extension ChatView {
     
     @objc func sendMessageButtonTapped(_ sender: UIButton) {
         
+        
+    }
+    
+    @objc func backButtonTapped(_ sender: UIButton) {
+        
+        delegate?.chatView(backButtonTapped: sender)
         
     }
     

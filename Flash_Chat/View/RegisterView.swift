@@ -61,7 +61,7 @@ class RegisterView: CustomView {
     
     lazy var backButton: UIButton = {
         let button = UIButton()
-        let iconConfiguration = UIImage.SymbolConfiguration(pointSize: 25, weight: .medium, scale: .medium)
+        let iconConfiguration = UIImage.SymbolConfiguration(pointSize: 15, weight: .medium, scale: .medium)
         let image = UIImage(systemName: "arrow.left", withConfiguration: iconConfiguration)
         button.setImage(image, for: .normal)
         button.backgroundColor = UIColor.black.withAlphaComponent(0.3)
@@ -101,6 +101,7 @@ class RegisterView: CustomView {
         
         addSubview(emailView)
         addSubview(passwordView)
+        emailView.addSubview(backButton)
         emailView.addSubview(emailBackgroundImage)
         emailView.addSubview(emailTextField)
         passwordView.addSubview(passwordBackgroundImage)
@@ -129,7 +130,7 @@ extension RegisterView {
     }
     
     @objc func backButtonTapped(_ sender: UIButton) {
-        
+        delegate?.registerView(backButtonTapped: sender)
     }
     
 }
@@ -138,6 +139,13 @@ extension RegisterView {
     
     
     func setupConstraints() {
+        
+        backButton.snp.makeConstraints { make in
+            make.height.equalTo(25)
+            make.width.equalTo(25)
+            make.top.equalToSuperview().offset(5)
+            make.leading.equalToSuperview().offset(10)
+        }
         
         emailView.snp.makeConstraints { make in
             make.top.equalToSuperview().offset(40)
