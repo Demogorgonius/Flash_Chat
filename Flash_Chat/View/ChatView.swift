@@ -73,8 +73,7 @@ class ChatView: CustomView {
         super.setupViews()
         
         tableView = ChatTableView(frame: CGRect(x: 0, y: 0, width: 0, height: 0), style: .grouped)
-        tableView.delegate = self
-        tableView.dataSource = self
+
         backgroundColor = UIColor(named: "BrandPurple")
         addSubview(tableView)
         addSubview(sendMessageView)
@@ -139,6 +138,7 @@ extension ChatView {
     
     @objc func sendMessageButtonTapped(_ sender: UIButton) {
         
+        delegate?.chatView(sendMessageButtonTapped: sender)
         
     }
     
@@ -157,19 +157,3 @@ extension UITextField {
     }
 }
 
-extension ChatView: UITableViewDelegate, UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: ChatTableViewCell.reuseID, for: indexPath)
-        guard let newCell = cell as? ChatTableViewCell else {
-            
-            return cell
-        }
-        return newCell
-    }
-    
-    
-}

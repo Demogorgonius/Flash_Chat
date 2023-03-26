@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		634E547254378D3F8F191984 /* Pods_Flash_ChatTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C103B6D0071D8A97CCE00A18 /* Pods_Flash_ChatTests.framework */; };
 		8CB6247E657B6AFC1A7BDF5D /* Pods_Flash_Chat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05B2CEEB374A064797C320FE /* Pods_Flash_Chat.framework */; };
+		A509E80E29C67CE800D283D5 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = A509E80D29C67CE800D283D5 /* Message.swift */; };
+		A509E81029D07E1000D283D5 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A509E80F29D07E1000D283D5 /* Constants.swift */; };
 		A50CB12229BF07AC006FAC8A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50CB12129BF07AC006FAC8A /* AppDelegate.swift */; };
 		A50CB12429BF07AC006FAC8A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50CB12329BF07AC006FAC8A /* SceneDelegate.swift */; };
 		A50CB12929BF07AC006FAC8A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A50CB12729BF07AC006FAC8A /* Main.storyboard */; };
@@ -64,6 +66,8 @@
 		6AFD2B8F79C2BB343AF6C2C4 /* Pods-Flash_Chat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Flash_Chat.debug.xcconfig"; path = "Target Support Files/Pods-Flash_Chat/Pods-Flash_Chat.debug.xcconfig"; sourceTree = "<group>"; };
 		7DC3D2A83EBFCA3D33748D3D /* Pods-Flash_Chat-Flash_ChatUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Flash_Chat-Flash_ChatUITests.release.xcconfig"; path = "Target Support Files/Pods-Flash_Chat-Flash_ChatUITests/Pods-Flash_Chat-Flash_ChatUITests.release.xcconfig"; sourceTree = "<group>"; };
 		8AD351180D109AEBF3365B87 /* Pods-Flash_Chat-Flash_ChatUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Flash_Chat-Flash_ChatUITests.debug.xcconfig"; path = "Target Support Files/Pods-Flash_Chat-Flash_ChatUITests/Pods-Flash_Chat-Flash_ChatUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		A509E80D29C67CE800D283D5 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		A509E80F29D07E1000D283D5 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		A50CB11E29BF07AC006FAC8A /* Flash_Chat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Flash_Chat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A50CB12129BF07AC006FAC8A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A50CB12329BF07AC006FAC8A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -211,6 +215,8 @@
 		A50CB15229BF0933006FAC8A /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				A509E80D29C67CE800D283D5 /* Message.swift */,
+				A509E80F29D07E1000D283D5 /* Constants.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -523,11 +529,13 @@
 				A517AF9D29C2D22A00BCC46C /* ChatView.swift in Sources */,
 				A517AF9729C1AB7F00BCC46C /* LoginView.swift in Sources */,
 				A517AF9529C078E500BCC46C /* RegisterViewController.swift in Sources */,
+				A509E81029D07E1000D283D5 /* Constants.swift in Sources */,
 				A517AF9329C078D200BCC46C /* RegisterView.swift in Sources */,
 				A50CB12429BF07AC006FAC8A /* SceneDelegate.swift in Sources */,
 				A50CB15629BF09CA006FAC8A /* CustomViewController.swift in Sources */,
 				A517AF9929C1AB8F00BCC46C /* LoginViewController.swift in Sources */,
 				A517AFA129C2FF0A00BCC46C /* ChatTableViewCell.swift in Sources */,
+				A509E80E29C67CE800D283D5 /* Message.swift in Sources */,
 				A517AF9F29C2D25000BCC46C /* ChatTableView.swift in Sources */,
 				A50CB15C29BF12B0006FAC8A /* WelcomeViewController.swift in Sources */,
 			);
