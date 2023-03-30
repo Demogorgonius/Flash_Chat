@@ -7,10 +7,12 @@ target 'Flash_Chat' do
 
   # Pods for Flash_Chat
 pod 'SnapKit', '~> 5.6.0'
+pod 'IQKeyboardManagerSwift', '6.3.0'
   target 'Flash_ChatTests' do
     inherit! :search_paths
     # Pods for testing
 pod 'SnapKit', '~> 5.6.0'
+pod 'IQKeyboardManagerSwift', '6.3.0'
   end
 
   target 'Flash_ChatUITests' do

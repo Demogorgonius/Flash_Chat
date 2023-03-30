@@ -15,9 +15,14 @@ class ChatViewController: CustomViewController<ChatView> {
     
     let db = Firestore.firestore()
     
+    var isMe = false
+    let defaults = UserDefaults.standard
+    
     var messages: [Message] = [
-        Message(sender: "Test@test.ru", body: "Hey! sdfsdfs d sdfsdfsdf wefwefkofkop koosdkfgokolwdff km"),
-        Message(sender: "user@user.ru", body: "Hello!!! rrgefrv  ef ef kmef mk eflmk mff bmklmemf ml")
+//        Message(sender: "test@test.ru", body: "Hey! sdfsdfs d sdfsdfsdf wefwefkofkop koosdkfgokolwdff km"),
+//        Message(sender: "1@1.ru", body: "Hello!!! rrgefrv  ef ef kmef mk eflmk mff bmklmemf ml"),
+//        Message(sender: "1@1.ru", body: "Hello!!! rrgefrv  ef efdfgdfgdfgdfg dfgd fg dfg df gdfgf ml"),
+//        Message(sender: "test@test.ru", body: "Hey! sdfsdfs dfgnbf gr45434t fgn f jrfgnh")
     ]
     
     override func loadView() {
@@ -36,7 +41,7 @@ class ChatViewController: CustomViewController<ChatView> {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-
+        
     }
     
     func loadMessageFromServer() {
@@ -57,12 +62,18 @@ class ChatViewController: CustomViewController<ChatView> {
                            let messageBody = data[K.FStore.bodyField] as? String {
                             self.messages.append(Message(sender: sender, body: messageBody))
                             
-                            DispatchQueue.main.async {
-                                self.customView.tableView.reloadData()
-                            }
-                            
                         }
                     }
+                    
+                    DispatchQueue.main.async {
+                        self.customView.tableView.reloadData()
+                        if self.messages.count != 0 {
+                            let indexPath = IndexPath(row: self.messages.count - 1 , section: 0)
+                            self.customView.tableView.scrollToRow(at: indexPath, at: .top, animated: false)
+                        }
+                       
+                    }
+                    
                 }
             }
         }
@@ -96,7 +107,12 @@ extension ChatViewController: ChatViewDelegate {
                     self.showErrorAlert(error: error, message: nil)
                 } else {
                     print ("Successfully saved data.")
-                    self.customView.messageTextField.text = ""
+                    
+                    DispatchQueue.main.async {
+                        self.customView.messageTextField.text = ""
+                        self.tableView.reloadData()
+                    }
+                    
                 }
             }
         }
@@ -127,7 +143,6 @@ extension ChatViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: ChatTableViewCell.reuseID, for: indexPath)
         guard let newCell = cell as? ChatTableViewCell else {
@@ -135,7 +150,21 @@ extension ChatViewController: UITableViewDelegate, UITableViewDataSource {
         }
         let user = messages[indexPath.row].sender
         let body = messages[indexPath.row].body
-        newCell.configureCell(message: body, user: user)
+        
+        if let curUser = defaults.object(forKey: "user") as? String {
+            if curUser == user {
+                isMe = true
+                
+            } else {
+                isMe = false
+               
+            }
+        } else {
+            isMe = false
+            
+        }
+        
+        newCell.configureCell(message: body, user: user, isMe: isMe)
         return newCell
     }
     
@@ -145,5 +174,6 @@ extension ChatViewController: UITableViewDelegate, UITableViewDataSource {
     
     
 }
+
 
 
