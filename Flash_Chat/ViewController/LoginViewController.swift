@@ -11,6 +11,8 @@ import Firebase
 
 class LoginViewController: CustomViewController<LoginView> {
     
+    let defaults = UserDefaults.standard
+    
     override func loadView() {
         super.loadView()
         
@@ -35,6 +37,7 @@ extension LoginViewController: LoginViewDelegate {
                 if let error = error {
                     self.showErrorAlert(error: error, stringMessage: nil)
                 } else {
+                    self.defaults.set(email.lowercased(), forKey: "user")
                     let chatVC = ChatViewController()
                     chatVC.modalPresentationStyle = .fullScreen
                     self.present(chatVC, animated: true)

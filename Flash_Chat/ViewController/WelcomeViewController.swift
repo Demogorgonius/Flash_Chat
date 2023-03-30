@@ -42,6 +42,10 @@ extension WelcomeViewController: WelcomeViewDelegate {
         let loginViewController = LoginViewController()
         loginViewController.modalPresentationStyle = .fullScreen
         present(loginViewController, animated: true)
+//        let chatVC = ChatViewController()
+//        UserDefaults.standard.set("test@test.ru", forKey: "user")
+//        chatVC.modalPresentationStyle = .fullScreen
+//        present(chatVC, animated: true)
         
     }
     

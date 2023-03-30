@@ -15,8 +15,8 @@ class ChatTableView: UITableView {
         
         backgroundColor = UIColor.white
         register(ChatTableViewCell.self, forCellReuseIdentifier: ChatTableViewCell.reuseID)
-        rowHeight = 40
         separatorStyle = .none
+        
     }
     
     required init?(coder: NSCoder) {
@@ -25,4 +25,5 @@ class ChatTableView: UITableView {
     
     
 }
+
 
